@@ -2,12 +2,12 @@ from flask import Flask, request, jsonify
 from joblib import load
 import pandas as pd
 from supabase import create_client, Client
+import numpy as np
 import datetime
 
 app = Flask(__name__)
 
 model = load("traffic_model.pkl")
-
 connection_string = "https://qyndfzptnprhmwxkegrf.supabase.co"
 supabase: Client = create_client(connection_string,"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5bmRmenB0bnByaG13eGtlZ3JmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMwNjMwMzMsImV4cCI6MjA0ODYzOTAzM30.WLb3wTS-tKJp3GIWCy1q-NQD8gXV1zSe6pGs3LcopBg")
 
